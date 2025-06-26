@@ -1,0 +1,22 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Panduan Struktur Proyek Next.js
+
+Proyek ini menggunakan struktur standar Next.js. Berikut adalah penjelasan direktori dan file utama:
+
+- **[app/](mdc:app)**: Direktori utama untuk routing dan halaman Next.js.
+  - **[layout.js](mdc:app/layout.js)**: Layout global untuk seluruh aplikasi.
+  - **[page.js](mdc:app/page.js)**: Halaman utama (root) aplikasi.
+  - **[globals.css](mdc:app/globals.css)**: File CSS global.
+  - **favicon.ico**: Ikon aplikasi.
+- **[public/](mdc:public)**: Berisi aset statis seperti gambar SVG.
+- **[package.json](mdc:package.json)** & **[package-lock.json](mdc:package-lock.json)**: File konfigurasi dependensi npm.
+- **[next.config.mjs](mdc:next.config.mjs)**: Konfigurasi khusus untuk Next.js.
+- **[jsconfig.json](mdc:jsconfig.json)**: Konfigurasi path dan module untuk JavaScript/TypeScript.
+- **[postcss.config.mjs](mdc:postcss.config.mjs)**: Konfigurasi PostCSS.
+- **[README.md](mdc:README.md)**: Dokumentasi proyek.
+
+Gunakan aturan ini untuk memahami struktur dan navigasi kode di proyek ini.
