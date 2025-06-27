@@ -8,7 +8,7 @@ Aplikasi AI Try-On untuk bisnis fashion yang memungkinkan customer mencoba pakai
 - **Virtual Try-On AI**: Teknologi AI untuk mencoba pakaian secara real-time
 - **Camera Integration**: Integrasi kamera dengan pose detection
 - **Garment Selection**: Pilihan berbagai model pakaian (Dress, Blouse, Pants, Skirt)
-- **Fabric Options**: Berbagai jenis kain dengan harga (Cotton, Silk, Linen, Wool, Denim, Velvet)
+- **Fabric Options**: Berbagai jenis kain dengan sample pattern visual (Cotton, Silk, Linen, Wool, Denim, Velvet)
 - **Color Customization**: Pilihan warna yang beragam
 - **Size Selection**: Berbagai ukuran dari XS hingga 2XL
 - **Kiosk Mode**: Optimized untuk penggunaan touchscreen kiosk
@@ -121,10 +121,9 @@ BUSINESS_NAME="Fashion Studio"
 BUSINESS_PHONE="+62-XXX-XXXX-XXXX"
 BUSINESS_EMAIL="info@fashionstudio.com"
 
-# Fabric Pricing (Rupiah per meter)
-FABRIC_COTTON_PRICE=150000
-FABRIC_SILK_PRICE=350000
-FABRIC_LINEN_PRICE=200000
+# Fabric Configuration
+FABRIC_DISPLAY_PATTERNS=true
+FABRIC_SHOW_PRICING=false
 ```
 
 ### Kiosk Mode Setup

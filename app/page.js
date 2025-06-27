@@ -55,43 +55,43 @@ export default function Home() {
       id: 'cotton', 
       name: 'Cotton', 
       texture: 'Soft & Breathable',
-      price: 'Rp 150.000/m',
-      pattern: 'bg-gradient-to-br from-green-100 to-green-200'
+      pattern: 'fabric-cotton',
+      icon: '🌿'
     },
     { 
       id: 'silk', 
       name: 'Silk', 
       texture: 'Luxury & Smooth',
-      price: 'Rp 350.000/m',
-      pattern: 'bg-gradient-to-br from-purple-100 to-rose-200'
+      pattern: 'fabric-silk',
+      icon: '✨'
     },
     { 
       id: 'linen', 
       name: 'Linen', 
       texture: 'Natural & Cool',
-      price: 'Rp 200.000/m',
-      pattern: 'bg-gradient-to-br from-yellow-100 to-orange-200'
+      pattern: 'fabric-linen',
+      icon: '🌾'
     },
     { 
       id: 'wool', 
       name: 'Wool', 
       texture: 'Warm & Cozy',
-      price: 'Rp 300.000/m',
-      pattern: 'bg-gradient-to-br from-gray-100 to-gray-200'
+      pattern: 'fabric-wool',
+      icon: '🐑'
     },
     { 
       id: 'denim', 
       name: 'Denim', 
       texture: 'Durable & Classic',
-      price: 'Rp 180.000/m',
-      pattern: 'bg-gradient-to-br from-blue-100 to-blue-200'
+      pattern: 'fabric-denim',
+      icon: '👖'
     },
     { 
       id: 'velvet', 
       name: 'Velvet', 
       texture: 'Rich & Elegant',
-      price: 'Rp 400.000/m',
-      pattern: 'bg-gradient-to-br from-red-100 to-pink-200'
+      pattern: 'fabric-velvet',
+      icon: '💎'
     }
   ];
 
@@ -295,17 +295,22 @@ export default function Home() {
                       selectedFabric === fabric.id 
                         ? 'border-accent-color bg-yellow-50 shadow-lg' 
                         : 'border-gray-200 hover:border-accent-color hover:shadow-md'
-                    } ${fabric.pattern}`}
+                    }`}
                   >
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <div className="font-semibold text-lg">{fabric.name}</div>
-                        <div className="text-sm text-text-secondary">{fabric.texture}</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-sm font-bold text-accent-color">{fabric.price}</div>
-                      </div>
-                    </div>
+                                         <div className="flex items-center space-x-4">
+                       {/* Fabric Sample Pattern */}
+                       <div className={`w-16 h-16 rounded-lg ${fabric.pattern} border-2 border-gray-300 shadow-sm relative overflow-hidden`}>
+                         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10">
+                           <span className="text-lg opacity-70">{fabric.icon}</span>
+                         </div>
+                       </div>
+                       
+                       {/* Fabric Info */}
+                       <div className="flex-1">
+                         <div className="font-semibold text-lg">{fabric.name}</div>
+                         <div className="text-sm text-text-secondary">{fabric.texture}</div>
+                       </div>
+                     </div>
                   </button>
                 ))}
               </div>
@@ -489,11 +494,6 @@ export default function Home() {
                   <div className="font-semibold">
                     {selectedFabric ? fabricOptions.find(f => f.id === selectedFabric)?.name : 'Belum dipilih'}
                   </div>
-                  {selectedFabric && (
-                    <div className="text-sm text-accent-color font-bold">
-                      {fabricOptions.find(f => f.id === selectedFabric)?.price}
-                    </div>
-                  )}
                 </div>
                 
                 <div className="p-3 bg-gray-50 rounded-lg">
@@ -507,16 +507,23 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Estimasi Harga */}
-              {selectedFabric && (
-                <div className="border-t pt-4 mb-6">
-                  <h3 className="font-bold mb-2">Estimasi Harga</h3>
-                  <div className="text-2xl font-bold text-accent-color">
-                    {fabricOptions.find(f => f.id === selectedFabric)?.price}
-                  </div>
-                  <div className="text-sm text-text-secondary">*Harga per meter kain</div>
-                </div>
-              )}
+                             {/* Fabric Sample Preview */}
+               {selectedFabric && (
+                 <div className="border-t pt-4 mb-6">
+                   <h3 className="font-bold mb-2">Sample Kain Terpilih</h3>
+                   <div className="flex items-center space-x-3">
+                     <div className={`w-12 h-12 rounded-lg ${fabricOptions.find(f => f.id === selectedFabric)?.pattern} border-2 border-gray-300 shadow-sm relative overflow-hidden`}>
+                       <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-10">
+                         <span className="text-sm opacity-70">{fabricOptions.find(f => f.id === selectedFabric)?.icon}</span>
+                       </div>
+                     </div>
+                     <div>
+                       <div className="font-semibold">{fabricOptions.find(f => f.id === selectedFabric)?.name}</div>
+                       <div className="text-sm text-text-secondary">{fabricOptions.find(f => f.id === selectedFabric)?.texture}</div>
+                     </div>
+                   </div>
+                 </div>
+               )}
 
               <div className="space-y-3">
                 <button 

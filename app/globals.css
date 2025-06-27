@@ -116,6 +116,86 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
 }
 
+/* Fabric Pattern Styles */
+.fabric-cotton {
+  background: linear-gradient(45deg, #f0f8f0 25%, transparent 25%), 
+              linear-gradient(-45deg, #f0f8f0 25%, transparent 25%), 
+              linear-gradient(45deg, transparent 75%, #e8f5e8 75%), 
+              linear-gradient(-45deg, transparent 75%, #e8f5e8 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+  background-color: #f8fdf8;
+}
+
+.fabric-silk {
+  background: linear-gradient(135deg, #fdf2f8 0%, #f3e8ff 50%, #fdf2f8 100%);
+  background-size: 20px 20px;
+  position: relative;
+}
+
+.fabric-silk::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(236, 72, 153, 0.1) 2px, transparent 2px);
+  background-size: 15px 15px;
+}
+
+.fabric-linen {
+  background: linear-gradient(0deg, #fef3c7 50%, #fbbf24 50%),
+              linear-gradient(90deg, #fef3c7 50%, #fbbf24 50%);
+  background-size: 4px 4px;
+  background-color: #fffbeb;
+}
+
+.fabric-wool {
+  background: radial-gradient(circle at 2px 2px, #e5e7eb 1px, transparent 1px);
+  background-size: 8px 8px;
+  background-color: #f9fafb;
+  position: relative;
+}
+
+.fabric-wool::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 6px 6px, #d1d5db 0.5px, transparent 0.5px);
+  background-size: 12px 12px;
+}
+
+.fabric-denim {
+  background: linear-gradient(45deg, #dbeafe 25%, transparent 25%), 
+              linear-gradient(-45deg, #dbeafe 25%, transparent 25%), 
+              linear-gradient(45deg, transparent 75%, #bfdbfe 75%), 
+              linear-gradient(-45deg, transparent 75%, #bfdbfe 75%);
+  background-size: 6px 6px;
+  background-position: 0 0, 0 3px, 3px -3px, -3px 0px;
+  background-color: #eff6ff;
+}
+
+.fabric-velvet {
+  background: linear-gradient(135deg, #fef2f2 0%, #fecaca 25%, #fef2f2 50%, #fecaca 75%, #fef2f2 100%);
+  background-size: 12px 12px;
+  position: relative;
+}
+
+.fabric-velvet::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 1px 1px, rgba(239, 68, 68, 0.1) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   html {
