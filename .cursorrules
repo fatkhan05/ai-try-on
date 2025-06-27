@@ -1,0 +1,60 @@
+## Code Style Rules
+
+## Tailwind CSS
+- Gunakan TailwindCSS untuk semua styling UI.
+- Hindari penggunaan CSS inline atau file CSS terpisah.
+- Gunakan class Tailwind responsif seperti `max-w-screen-lg`, `mx-auto`, `rounded-xl`, `shadow-lg`, dan `text-center`.
+
+## Komponen dan Struktur Kode
+- Gunakan Functional Components (React).
+- Gunakan camelCase untuk nama variabel dan fungsi.
+- Hindari logika kompleks dalam komponen, pisahkan ke hooks atau helpers.
+- Gunakan `async/await` untuk request API dan penanganan async.
+
+## Penamaan dan Konvensi
+- Gunakan nama yang deskriptif, seperti `TryOnPanel`, `FabricSelector`, dan `ModelPreview`.
+- Setiap komponen hanya mengatur satu tanggung jawab (single responsibility).
+
+## Lainnya
+- Semua komponen harus reusable dan dapat dikonfigurasi.
+- Gunakan komentar hanya untuk logika kompleks.
+
+
+## Project Structure Guidelines
+
+## Struktur Folder Frontend (Next.js)
+- `components/`: Komponen UI yang reusable (contoh: `Button.tsx`, `TryOnViewer.tsx`).
+- `pages/`: Halaman aplikasi utama (contoh: `index.tsx`, `tryon.tsx`).
+- `styles/`: Hanya untuk konfigurasi Tailwind dan global reset jika dibutuhkan.
+- `lib/`: Fungsi-fungsi utilitas dan helpers.
+- `hooks/`: Custom hooks.
+- `public/`: Gambar, font, dan aset statis lainnya.
+
+## Backend (Python API / Node.js)
+- `api/`: Endpoint try-on (image generation, upload, dsb).
+- `services/`: Koneksi ke model AI dan third-party services.
+- `storage/`: Upload folder untuk gambar hasil try-on.
+
+## Deployment
+- Aplikasi berjalan secara offline pada mode kiosk.
+- Semua file harus pre-bundled dan dapat diakses lokal.
+
+
+## Source & Documentation Rules
+
+## Penulisan Dokumentasi
+- Gunakan bahasa Inggris untuk dokumentasi internal (kecuali ditentukan lain).
+- Gunakan gaya singkat dan langsung ke poin.
+- Tambahkan file `README.md` di root dengan isi:
+  - Deskripsi proyek try-on
+  - Cara menjalankan (development dan production)
+  - Struktur folder
+  - Cara kontribusi
+
+## Kode dan Komentar
+- Tambahkan komentar pada bagian logika AI dan komunikasi API.
+- Semua komponen utama harus memiliki docstring atau JSDoc (jika TypeScript/JS).
+
+## Penamaan dan File
+- Gunakan nama file yang mencerminkan isinya, contoh: `model-api.ts`, `fabric-selector.tsx`
+- Hindari singkatan yang tidak umum.
